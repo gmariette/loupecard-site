@@ -10,7 +10,7 @@ from pathlib import Path
 
 ICI = Path(__file__).resolve().parent
 SORTIE = ICI / "public"
-CONTACT = "contact@loupecard.com"   # à remplacer tant que le domaine n'est pas acheté
+CONTACT = "geoffrey.mariette@gmail.com"   # provisoire, en attendant une adresse sur le domaine
 MAJ = date(2026, 11, 19)
 LOGO = (ICI / "logo.svg").read_text()
 
