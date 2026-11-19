@@ -1,0 +1,42 @@
+/* LoupeCard : mêmes tons que l'app. Aucune ressource externe (pas de police ni de traceur tiers). */
+:root {
+  --fond: #f4f2ee;
+  --surface: #ffffff;
+  --texte: #1c2027;
+  --doux: #5d6470;
+  --trait: #dcd8d0;
+  --accent: #4f7a5c;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --fond: #14181f; --surface: #1f252e; --texte: #ece8e1; --doux: #9aa0a8; --trait: #343c47; --accent: #7fa88a; color-scheme: dark; }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--fond); color: var(--texte);
+  font: 17px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+  padding: 0 max(20px, env(safe-area-inset-left)) 64px max(20px, env(safe-area-inset-right));
+}
+main, header, footer { max-width: 680px; margin: 0 auto; }
+header { display: flex; justify-content: space-between; align-items: center; padding: 24px 0; gap: 16px; flex-wrap: wrap; }
+.marque { font-weight: 700; font-size: 20px; letter-spacing: -0.01em; color: var(--texte); text-decoration: none; display: flex; align-items: center; gap: 10px; }
+.marque svg { width: 28px; height: 28px; }
+nav { display: flex; gap: 18px; font-size: 15px; }
+nav a, footer a { color: var(--doux); text-decoration: none; }
+nav a:hover, footer a:hover, nav a[aria-current] { color: var(--texte); }
+h1 { font-size: clamp(30px, 6vw, 44px); line-height: 1.15; letter-spacing: -0.02em; margin: 32px 0 16px; text-wrap: balance; }
+h2 { font-size: 21px; margin: 36px 0 8px; }
+p, li { color: var(--texte); max-width: 65ch; }
+.chapo { font-size: 19px; color: var(--doux); }
+.carte { background: var(--surface); border: 1px solid var(--trait); border-radius: 16px; padding: 20px 22px; margin: 28px 0; }
+.code { font: 600 15px/1 ui-monospace, "SF Mono", Menlo, monospace; background: var(--fond); border: 1px solid var(--trait); padding: 3px 7px; border-radius: 6px; }
+.verdicts { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin: 24px 0; }
+.verdict { border-radius: 14px; padding: 14px 16px; border: 1px solid var(--trait); background: var(--surface); }
+.verdict strong { display: block; font-size: 17px; }
+.verdict span { color: var(--doux); font-size: 14px; }
+.verdict.manque strong { color: var(--accent); }
+a { color: var(--accent); }
+.maj { color: var(--doux); font-size: 14px; }
+footer { border-top: 1px solid var(--trait); margin-top: 56px; padding-top: 20px; font-size: 13px; color: var(--doux); display: grid; gap: 8px; }
+footer .liens { display: flex; gap: 16px; flex-wrap: wrap; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
